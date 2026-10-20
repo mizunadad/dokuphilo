@@ -1,0 +1,125 @@
+{
+  "source": "egoguard/tools/test_sanitizer.mjs",
+  "cases": [
+    {
+      "input": "yamada123@example.co.jp に送って",
+      "expected": "[CONTACT] に送って",
+      "note": "メール: 数値置換に壊されない（旧版の最大バグ）"
+    },
+    {
+      "input": "taro.suzuki+ml@corp-mail.com",
+      "expected": "[CONTACT]",
+      "note": "メール: 記号入り"
+    },
+    {
+      "input": "03-1234-5678 まで",
+      "expected": "[CONTACT] まで",
+      "note": "電話: 固定"
+    },
+    {
+      "input": "090-1234-5678",
+      "expected": "[CONTACT]",
+      "note": "電話: 携帯"
+    },
+    {
+      "input": "555-123-4567",
+      "expected": "[CONTACT]",
+      "note": "電話: 北米形式"
+    },
+    {
+      "input": "https://example.com/secret?id=9 を参照",
+      "expected": "[URL] を参照",
+      "note": "URL: スキームつき"
+    },
+    {
+      "input": "詳細は internal-wiki.co.jp にあります",
+      "expected": "詳細は [URL] にあります",
+      "note": "URL: スキームなし"
+    },
+    {
+      "input": "田中部長、ご確認ください",
+      "expected": "[NAME]部長、ご確認ください",
+      "note": "人名: 漢字＋役職"
+    },
+    {
+      "input": "スズキさんに聞いて",
+      "expected": "[NAME]さんに聞いて",
+      "note": "人名: カタカナ＋敬称"
+    },
+    {
+      "input": "田中様、お世話になります",
+      "expected": "[NAME]様、お世話になります",
+      "note": "人名: 漢字2文字＋様＋読点"
+    },
+    {
+      "input": "Mr. Smith が言うには",
+      "expected": "[NAME] が言うには",
+      "note": "人名: 英語敬称"
+    },
+    {
+      "input": "CEO Jones と会った",
+      "expected": "[NAME] と会った",
+      "note": "人名: 英語役職"
+    },
+    {
+      "input": "株式会社サンプル工業との契約",
+      "expected": "[ORG]との契約",
+      "note": "組織: 前置き"
+    },
+    {
+      "input": "サンプル銀行の担当者",
+      "expected": "[ORG]の担当者",
+      "note": "組織: 後置き"
+    },
+    {
+      "input": "Acme Inc. のケース",
+      "expected": "[ORG] のケース",
+      "note": "組織: 英語"
+    },
+    {
+      "input": "その500万円の損失",
+      "expected": "その[NUM]の損失",
+      "note": "金額: 日本語"
+    },
+    {
+      "input": "$50,000 の予算",
+      "expected": "[NUM] の予算",
+      "note": "金額: ドル"
+    },
+    {
+      "input": "歩留まりが20%改善",
+      "expected": "歩留まりが[NUM]改善",
+      "note": "数値: パーセント"
+    },
+    {
+      "input": "ロットは12個です",
+      "expected": "ロットは[NUM]です",
+      "note": "数値: 助数詞"
+    },
+    {
+      "input": "この仕様書を確認してください",
+      "expected": "この仕様書を確認してください",
+      "note": "誤爆防止: 「仕様」を[NAME]様にしない"
+    },
+    {
+      "input": "同じ模様が出ています",
+      "expected": "同じ模様が出ています",
+      "note": "誤爆防止: 「模様」"
+    },
+    {
+      "input": "みなさんおはようございます",
+      "expected": "みなさんおはようございます",
+      "note": "誤爆防止: ひらがなの「さん」"
+    },
+    {
+      "input": "承知しました。では次のアジェンダに移ります。",
+      "expected": "承知しました。では次のアジェンダに移ります。",
+      "note": "誤爆防止: 通常の業務発話"
+    },
+    {
+      "input": "前提を共有してから話しましょう",
+      "expected": "前提を共有してから話しましょう",
+      "note": "誤爆防止: PIIなし"
+    }
+  ]
+}

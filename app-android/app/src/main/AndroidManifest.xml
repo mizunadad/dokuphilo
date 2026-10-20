@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- マイク（S1b）。実行時の権限も、マイクのボタンを押したときに要求する（MainActivity 参照） -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- 通信（S2b。ADR-027 決定7）。通信するのは Jev のクライアント（JevClient.kt）だけ。
+         送り先は1か所だけ（JevProtocol.kt の JEV_ENDPOINT）。キーが未設定なら一切通信しない -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Android 11 (API 30) 以降は、この <queries> がないと音声認識サービスが見えない
+         （ref/egoguard/AndroidManifest.xml と同じ形） -->
+    <queries>
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
+        </intent>
+    </queries>
+
+    <!-- バックアップしない（ADR-027 決定6）。Jev のキーのファイルは、res/xml の2つのルールでも除外している -->
+    <application
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DokuPhilo">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.DokuPhilo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

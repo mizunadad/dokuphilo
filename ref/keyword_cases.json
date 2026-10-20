@@ -1,0 +1,182 @@
+{
+  "source": "tools/test_keywords.mjs",
+  "base_commit": "13dc56b",
+  "cases": [
+    {
+      "text": "私より上手く思考できる存在は知らないよ",
+      "expected": "flex"
+    },
+    {
+      "text": "昨日も社長とサウナで、新規事業のアドバイスを求められちゃってさ",
+      "expected": "flex"
+    },
+    {
+      "text": "自慢じゃないけど、今期の売上トップは僕だよ",
+      "expected": "flex"
+    },
+    {
+      "text": "俺くらいになると、プレゼンの練習なんていらないね",
+      "expected": "flex"
+    },
+    {
+      "text": "デート中に俺の年収の話をしちゃった",
+      "expected": "flex"
+    },
+    {
+      "text": "私クラスになると、準備なんていらないの",
+      "expected": "flex"
+    },
+    {
+      "text": "今日若手に説教したら、先生って呼ばれちゃってさ",
+      "expected": "flex"
+    },
+    {
+      "text": "社長くらいやったら僕でもできるけど。",
+      "expected": "flex"
+    },
+    {
+      "text": "取引先の昇進の推薦者になってって言われちゃったよ",
+      "expected": "flex"
+    },
+    {
+      "text": "社長とサウナで、新規事業のアドバイスを求められちゃったよ",
+      "expected": "flex"
+    },
+    {
+      "text": "定義も曖昧なまま、会議でWeb3とシナジーの重要性を語った",
+      "expected": "bluff"
+    },
+    {
+      "text": "読んでもいない本を、読んだふりして感想を言った",
+      "expected": "bluff"
+    },
+    {
+      "text": "よく知らないのに、知ってる知ってると相づちを打った",
+      "expected": "bluff"
+    },
+    {
+      "text": "専門用語を並べて、それっぽく語っておいた",
+      "expected": "bluff"
+    },
+    {
+      "text": "意味も分からず使ってる横文字が多い",
+      "expected": "bluff"
+    },
+    {
+      "text": "嫌われたくなくて、相手の意見に全部笑顔で同調しちゃった",
+      "expected": "anxious"
+    },
+    {
+      "text": "上司の顔色をうかがって、結局何も言えなかった",
+      "expected": "anxious"
+    },
+    {
+      "text": "飲み会の誘いをまた断れなかった",
+      "expected": "anxious"
+    },
+    {
+      "text": "本音が言えないまま、愛想笑いで乗り切った",
+      "expected": "anxious"
+    },
+    {
+      "text": "周りに流されて、反対できなかった",
+      "expected": "anxious"
+    },
+    {
+      "text": "空気読んで話合わせちゃった",
+      "expected": "anxious"
+    },
+    {
+      "text": "今日は雨ですね",
+      "expected": null
+    },
+    {
+      "text": "今日はいい天気なので、散歩してから本を読みます",
+      "expected": null
+    },
+    {
+      "text": "会議でエビデンスを示した",
+      "expected": null
+    },
+    {
+      "text": "彼は私より背が高い",
+      "expected": null
+    },
+    {
+      "text": "顔色が悪いので早めに帰ります",
+      "expected": null
+    },
+    {
+      "text": "同調圧力について本で読んだ",
+      "expected": null
+    },
+    {
+      "text": "意見を求められて答えた",
+      "expected": null
+    },
+    {
+      "text": "ご存知の通り、来週は祝日です",
+      "expected": null
+    },
+    {
+      "text": "Web3の記事を読んだ",
+      "expected": null
+    },
+    {
+      "text": "年収の統計を調べた",
+      "expected": null
+    },
+    {
+      "text": "うろ覚えなので確認します",
+      "expected": null
+    },
+    {
+      "text": "空気を読まない発言で場が和んだ",
+      "expected": null
+    },
+    {
+      "text": "私ほど不器用な人はいない",
+      "expected": null
+    },
+    {
+      "text": "俺ほど運の悪い奴はいない",
+      "expected": null
+    },
+    {
+      "text": "上司に呼ばれちゃって",
+      "expected": null
+    },
+    {
+      "text": "説明が下手で、誰も理解してもらえなかった",
+      "expected": null
+    },
+    {
+      "text": "このアプリならなんでもできちゃう",
+      "expected": null
+    },
+    {
+      "text": "僕でもできる簡単レシピ",
+      "expected": null
+    },
+    {
+      "text": "こんなに簡単なことができないなんて",
+      "expected": null
+    },
+    {
+      "text": "文句を言われちゃった",
+      "expected": null
+    },
+    {
+      "text": "先生に呼ばれちゃって、職員室に行った",
+      "expected": null
+    },
+    {
+      "text": "社長に教わった方法なら僕でもできる",
+      "expected": null
+    },
+    {
+      "text": "メールと電話合わせて5件対応した",
+      "expected": null
+    }
+  ]
+}

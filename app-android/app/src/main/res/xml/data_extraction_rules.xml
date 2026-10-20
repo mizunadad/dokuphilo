@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+   バックアップと端末移行の抽出ルール（Android 12 / API 31 以降で使われる）。
+   Jev のキーのファイル（SecureKeyStore.kt の dokuphilo_secure）を、クラウドのバックアップと
+   端末移行の両方から除外する（ADR-027 決定6）。
+   暗号文を復元しても、鍵（Android Keystore）は端末の外に出ないので復号できない。
+   AndroidManifest.xml の android:allowBackup も false にしている。
+   See https://developer.android.com/about/versions/12/backup-restore#xml-changes
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="sharedpref" path="dokuphilo_secure.xml" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="sharedpref" path="dokuphilo_secure.xml" />
+    </device-transfer>
+</data-extraction-rules>

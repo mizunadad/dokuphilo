@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+   バックアップのルール（Android 11 / API 30 以前で使われる。API 31 以降は data_extraction_rules.xml）。
+   Jev のキーのファイル（SecureKeyStore.kt の dokuphilo_secure）を除外する（ADR-027 決定6）。
+   AndroidManifest.xml の android:allowBackup も false にしている。
+   See https://developer.android.com/guide/topics/data/autobackup
+-->
+<full-backup-content>
+    <exclude domain="sharedpref" path="dokuphilo_secure.xml" />
+</full-backup-content>
